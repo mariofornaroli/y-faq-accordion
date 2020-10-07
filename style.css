@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #eee;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    width: 100%;
+    background-color: #24272c;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    width: 580px;
+    max-width: 100%;
+}
+
+.accordion-item {
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+h1 {
+    margin: 60px;
+    font-size: 2.4em;
+    color: #bbb;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+button {
+    position: relative;
+    width: 100%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    text-align: left;
+    font-size: 1.2em;
+    font-weight: bolder;
+    letter-spacing: 0.7px;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+button i {
+    margin-left: 16px;
+}
+
+button i.fa-minus {
+    display: none;
+}
+
+.response {
+    letter-spacing: 0.7px;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: opacity 0.2s linear, max-height 0.2s linear;
+}
+
+/* Accordion opened */
+
+button.opened ~ .response {
+    opacity: 1;
+    max-height: 150px;
+    transition: opacity 0.2s linear, max-height 0.2s linear;;
+}
+
+button.opened i.fa-plus {
+    display: none;
+}
+
+button.opened i.fa-minus {
+    display: block;
+}
+
+button:hover *,
+button.opened * {
+    color: #03b5d2;
+}
